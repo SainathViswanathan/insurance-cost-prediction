@@ -1,11 +1,17 @@
 # File: app.py
-# Streamlit App for Insurance Premium Prediction - Styled UI with Live API Integration
+# Streamlit App for Insurance Premium Prediction - Styled UI
 
 import streamlit as st
 import pandas as pd
-import requests
+import joblib
 
-# Continuous features used in scaling (not needed locally anymore)
+# -------------------------------
+# Load the trained ML model + scaler
+# -------------------------------
+#model = joblib.load("best_model.pkl")
+#scaler = joblib.load("scaler.pkl")   # <-- load the scaler
+
+# Continuous features used in scaling
 cont_features = ['Age', 'Height', 'Weight', 'BMI']
 
 # -------------------------------
@@ -86,11 +92,11 @@ h1 {
 }
 </style>
 """, unsafe_allow_html=True)
-
 # -------------------------------
 # Title Section
 # -------------------------------
 st.title("💰 Insurance Premium Estimator")
+
 st.markdown('<div class="form-desc">Predict your insurance premium using the form below:</div>', unsafe_allow_html=True)
 
 # -------------------------------
@@ -140,9 +146,9 @@ age_50_59 = 1 if 50 <= age <= 59 else 0
 age_60_plus = 1 if age >= 60 else 0
 
 # -------------------------------
-# Prepare payload for API
+# Prepare DataFrame for prediction
 # -------------------------------
-payload = {
+input_data = pd.DataFrame([{
     'Age': age,
     'Diabetes': diabetes,
     'Blood_Pressure_Problems': blood_pressure,
@@ -152,52 +158,38 @@ payload = {
     'Weight': weight,
     'Known_Allergies': known_allergies,
     'History_of_Cancer_in_Family': history_cancer,
-    'Number_of_Major_Surgeries': num_surgeries
-}
+    'Number_of_Major_Surgeries': num_surgeries,
+    'BMI': bmi,
+    'BMI_Category_Normal': bmi_normal,
+    'BMI_Category_Overweight': bmi_overweight,
+    'BMI_Category_Obese': bmi_obese,
+    'Age_Group_30-39': age_30_39,
+    'Age_Group_40-49': age_40_49,
+    'Age_Group_50-59': age_50_59,
+    'Age_Group_60+': age_60_plus
+}])
+
+# Ensure correct column order
+input_data = input_data.reindex(columns=model.feature_names_in_, fill_value=0)
+
+# Apply scaler to continuous features
+input_data[cont_features] = scaler.transform(input_data[cont_features])
 
 # -------------------------------
-# Prediction + Output via API
+# Prediction + Output
 # -------------------------------
 if st.button("Estimate Premium"):
-    try:
-        api_url = "https://insurance-cost-prediction-jef1.onrender.com/predict"
-        response = requests.post(api_url, json=payload)
+    prediction = model.predict(input_data)[0]
+    st.markdown(f'<div class="premium-box">💵 Estimated Insurance Premium: ₹{prediction:,.2f}</div>', unsafe_allow_html=True)
 
-        if response.status_code == 200:
-            result = response.json()
-            if result.get("success"):
-                prediction = result["prediction"]
-                derived = result.get("derived", {})
-                st.markdown(f'<div class="premium-box">💵 Estimated Insurance Premium: ₹{prediction:,.2f}</div>', unsafe_allow_html=True)
-                st.write("### Derived features from API:", derived)
-
-                # Download CSV
-                input_data = pd.DataFrame([{
-                    **payload,
-                    'BMI': bmi,
-                    'BMI_Category_Normal': bmi_normal,
-                    'BMI_Category_Overweight': bmi_overweight,
-                    'BMI_Category_Obese': bmi_obese,
-                    'Age_Group_30-39': age_30_39,
-                    'Age_Group_40-49': age_40_49,
-                    'Age_Group_50-59': age_50_59,
-                    'Age_Group_60+': age_60_plus
-                }])
-                csv = input_data.to_csv(index=False).encode('utf-8')
-                st.download_button(
-                    label="Download CSV",
-                    data=csv,
-                    file_name='insurance_input.csv',
-                    mime='text/csv',
-                )
-
-            else:
-                st.error(f"API Error: {result.get('error')}")
-        else:
-            st.error(f"Request failed with status code {response.status_code}")
-
-    except Exception as e:
-        st.error(f"An error occurred: {str(e)}")
+    st.write("### Download your input data")
+    csv = input_data.to_csv(index=False).encode('utf-8')
+    st.download_button(
+        label="Download CSV",
+        data=csv,
+        file_name='insurance_input.csv',
+        mime='text/csv',
+    )
 
 # -------------------------------
 # Footer
