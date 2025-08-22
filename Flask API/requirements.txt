@@ -1,0 +1,9 @@
+# Flask + API
+flask==2.3.5
+gunicorn==21.2.0
+
+# ML & data
+pandas==2.1.1
+numpy==1.26.0
+scikit-learn==1.3.2
+joblib==1.3.2
