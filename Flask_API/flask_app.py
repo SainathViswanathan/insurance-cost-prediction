@@ -1,12 +1,16 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+import os
+
 
 app = Flask(__name__)
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 # ---- Load model + scaler ----
-model = joblib.load(r"M:\Module - 19 - DSML Portfolio Project\1 - Insurance Cost Prediction\Flask_API\best_model.pkl")
-scaler = joblib.load(r"M:\Module - 19 - DSML Portfolio Project\1 - Insurance Cost Prediction\Flask_API\scaler.pkl")  # we used StandardScaler on ['Age','Height','Weight','BMI']
+model = joblib.load(os.path.join(BASE_DIR, "best_model.pkl"))
+scaler = joblib.load(os.path.join(BASE_DIR, "scaler.pkl")) # we used StandardScaler on ['Age','Height','Weight','BMI']
 
 MODEL_COLUMNS = list(model.feature_names_in_)  # 18 columns used during training
 CONT_FEATURES = ['Age', 'Height', 'Weight', 'BMI']
