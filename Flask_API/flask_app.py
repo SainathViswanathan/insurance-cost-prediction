@@ -5,8 +5,8 @@ import pandas as pd
 app = Flask(__name__)
 
 # ---- Load model + scaler ----
-model = joblib.load("best_model.pkl")
-scaler = joblib.load("scaler.pkl")  # we used StandardScaler on ['Age','Height','Weight','BMI']
+model = joblib.load(r"M:\Module - 19 - DSML Portfolio Project\1 - Insurance Cost Prediction\Flask_API\best_model.pkl")
+scaler = joblib.load(r"M:\Module - 19 - DSML Portfolio Project\1 - Insurance Cost Prediction\Flask_API\scaler.pkl")  # we used StandardScaler on ['Age','Height','Weight','BMI']
 
 MODEL_COLUMNS = list(model.feature_names_in_)  # 18 columns used during training
 CONT_FEATURES = ['Age', 'Height', 'Weight', 'BMI']
