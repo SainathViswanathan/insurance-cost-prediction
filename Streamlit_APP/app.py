@@ -161,7 +161,7 @@ payload = {
 # -------------------------------
 if st.button("Estimate Premium"):
     try:
-        api_url = "https://insurance-cost-prediction-jef1.onrender.com/predict"
+        api_url = "https://insurance-cost-prediction-model.onrender.com/predict"
         response = requests.post(api_url, json=payload)
 
         if response.status_code == 200:
