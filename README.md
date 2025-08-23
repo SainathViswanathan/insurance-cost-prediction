@@ -148,12 +148,11 @@ SHAP confirmed → **Age + medical history dominate**, while lifestyle factors a
 
 ## 📊 Demo & Links
 
-* Tableau Dashboard: \[🔗 Add link]
-* Deployed App: \[🔗 Add link]
-* GitHub Repo: \[🔗 This repo]
-* Blog (Medium/TDS): \[🔗 Add link]
-* Loom Video: \[🔗 Add link]
-* Portfolio Page (Optional): \[🔗 Add link]
+* Deployed App: [🔗 Streamlit App](https://insurancecostpredictiondeploy.streamlit.app/)
+* GitHub Repo: [🔗 This repo](https://github.com/SainathViswanathan)
+* Blog (Medium/TDS): [🔗 My Blog](https://medium.com/@sainath.sushil/from-data-to-deployment-predicting-insurance-premiums-with-machine-learning-c77c6bd821f4)
+* Loom Video: [🔗 Add link]
+* Portfolio Page (Optional): [🔗 My Portfolio](https://www.datascienceportfol.io/sainathsushil/projects/0)
 
 ---
 
@@ -162,4 +161,4 @@ SHAP confirmed → **Age + medical history dominate**, while lifestyle factors a
 **Sainath Viswanathan**  
 
 * 📧 [sainath.sushil@gmail.com](mailto:sainath.sushil@gmail.com)  
-* 🔗 [LinkedIn](https://www.linkedin.com/in/sainathviswanathan) | [GitHub](https://github.com/SainathViswanathan) | [Portfolio](https://www.datascienceportfol.io/sainathsushil) | [Medium Blog](https://medium.com/@sainath.sushil/from-data-to-deployment-predicting-insurance-premiums-with-machine-learning-c77c6bd821f4)
+* 🔗 [LinkedIn](https://www.linkedin.com/in/sainathviswanathan) | [GitHub](https://github.com/SainathViswanathan) | [Portfolio](https://www.datascienceportfol.io/sainathsushil) | [Medium](https://medium.com/@sainath.sushil)
