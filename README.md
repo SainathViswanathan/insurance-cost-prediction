@@ -161,5 +161,5 @@ SHAP confirmed → **Age + medical history dominate**, while lifestyle factors a
 
 **Sainath Viswanathan**
 
-* 📧 [Email](mailto:sainath.viswanathan@gmail.com)
-* 🔗 \[LinkedIn](linkedin.com/in/sainathviswanathan) | \[GitHub](<https://github.com/SainathViswanathan>)] | \[Portfolio]
+* 📧 [Email](mailto:sainath.sushil@gmail.com)
+* 🔗 [LinkedIn](linkedin.com/in/sainathviswanathan) | [GitHub](https://github.com/SainathViswanathan)] | [Portfolio]
