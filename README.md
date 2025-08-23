@@ -161,11 +161,5 @@ SHAP confirmed → **Age + medical history dominate**, while lifestyle factors a
 
 **Sainath Viswanathan**
 
-* 📧 \[Your Email]
-* 🔗 \[LinkedIn] | \[GitHub] | \[Portfolio]
-
----
-
-This version is **aligned with your PDF case study + model results**, making it reviewer-ready.
-
-👉 Do you want me to also generate a **shorter 1-page “Executive Summary” PDF** (Problem → Data → Best Model → Insights → Recommendations) for submission alongside your GitHub repo?
+* 📧 [Email](mailto:sainath.viswanathan@gmail.com)
+* 🔗 \[LinkedIn](linkedin.com/in/sainathviswanathan) | \[GitHub](<https://github.com/SainathViswanathan>)] | \[Portfolio]
