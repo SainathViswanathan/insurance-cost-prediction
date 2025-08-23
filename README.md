@@ -157,16 +157,9 @@ SHAP confirmed → **Age + medical history dominate**, while lifestyle factors a
 
 ---
 
-## 👨‍💻 Author
-
-**Sainath Viswanathan**
-
-* 📧 [Email](mailto:sainath.sushil@gmail.com)
-* 🔗 [LinkedIn](linkedin.com/in/sainathviswanathan) | [GitHub](https://github.com/SainathViswanathan)] | [Portfolio]
-
 ## 👨‍💻 Author  
 
 **Sainath Viswanathan**  
 
 * 📧 [sainath.sushil@gmail.com](mailto:sainath.sushil@gmail.com)  
-* 🔗 [LinkedIn](https://www.linkedin.com/in/sainathviswanathan) | [GitHub](https://github.com/SainathViswanathan) | [Portfolio](https://www.datascienceportfol.io/sainath-viswanathan)
+* 🔗 [LinkedIn](https://www.linkedin.com/in/sainathviswanathan) | [GitHub](https://github.com/SainathViswanathan) | [Portfolio](https://www.datascienceportfol.io/sainathsushil) | [Medium Blog](https://medium.com/@sainath.sushil/from-data-to-deployment-predicting-insurance-premiums-with-machine-learning-c77c6bd821f4)
