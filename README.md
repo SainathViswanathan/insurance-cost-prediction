@@ -80,6 +80,8 @@ This project leverages **machine learning** to predict insurance premiums using 
 | XGBoost                          | 1.00     | 0.86     | 2457      | ❌ Overfit      |
 | Neural Network                   | 0.70     | 0.78     | 3085      | ❌ Weak         |
 
+![alt text](Images/Final_Model_Comparison.png)
+
 ✅ **Final Choice** → **Random Forest** (best balance of accuracy & generalization)
 
 ---
@@ -106,8 +108,10 @@ SHAP confirmed → **Age + medical history dominate**, while lifestyle factors a
 * **Performance:**
 
   * Test R² = **0.89**
-  * Test RMSE = **₹2,129**
-  * Test MAE = **₹1,189**
+  * Test RMSE = **2129**
+  * Test MAE = **1189**
+
+![alt text](Images/Heatmap_Model_Comparison.png)
 
 ---
 
